@@ -1,1 +1,84 @@
+.remove-search{
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+.logo > img{
+    border-radius: 40px;
+    width: 250px;
+    height: 170px;
+}
+.heading-panel{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.menu-item{
+    font-size: 32px;
+    text-decoration: none;
+    padding-top: 40px;
+}
+.lil-line{
+    width: 228px;
+    height: 2px;
+    background-color: blueviolet;
+    position: relative;
+    right: 40px;
+}
+.searching{
+    border-radius: 20px;
+    width: 150px;
+    height: 20px;
+}
+.all-search{
+    margin-top: 30px;
+}
+.category{
+    width: 60%;
+    margin: auto;
+    margin-top: auto;
+    text-align: center;
+    margin-top: 80px;
+}
+.category .pagination{
+    display: flex;
+    justify-content: space-around;
+    width: 22%;
+    margin: 40px auto;
+}
+.category .pagination span{
+    border-radius: 8px;
+    border: 1px solid #718096;
+    font-size: 22px;
+    padding: 10px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+.img-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.active{
+    background-color: aqua;
+    border: 2px solid red;
+}
+.disabled{
+    background-color: lightslategray;
+    border: 2px solid black;
+}
+.oldPage, .newPage{
+    position: absolute;
+    z-index: 1000;
+    border: 1px solid black;
+    padding: 20px;
+    height: 20px;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-y: auto;
+}
+.last-button{
+    margin-bottom: 80px;
+}
 

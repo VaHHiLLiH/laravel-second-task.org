@@ -18,14 +18,18 @@ class TestController extends Controller
         //$images = Image::factory()->count(9)->for($category)->create();
         // НЕ РАБОТАЕТ
 
-        //$category = Category::factory()->has(Image::factory()->count(9))->create();
+        //$category = Category::factory()->has(Image::factory()->count(10))->create();
+
+
 
         return view('welcome');
     }
 
     public function viewCategory(Category $category)
     {
-        return view('category', compact('category'));
+        $images = $category->images;
+
+        return view('category', compact('category', 'images'));
     }
 
     public function showCategory(Request $request, CategoryRepository $categoryRepository)
@@ -35,8 +39,32 @@ class TestController extends Controller
         return $categoryRepository->getPeace($request->get('start'), $request->get('count'));
     }
 
-    public function getCategoryLimit(Request $request, CategoryRepository $categoryRepository)
+    public function getCategoryLimit()
     {
         return count(Category::all());
+    }
+
+    public function deleteCategory(Request $request)
+    {
+        $category = Category::find($request->get('category_id'));
+
+        $category->delete();
+    }
+
+    public function findCategories(Request $request, CategoryRepository $categoryRepository)
+    {
+        return $categoryRepository->findCategory($request->get('name_filter'));
+    }
+
+    public function getCount(Request $request, CategoryRepository $categoryRepository)
+    {
+        $category = Category::find($request->get('category_id'));
+
+        return count($category->images);
+    }
+
+    public function getPeaceForCategory(Request $request, ImageRepository $imageRepository)
+    {
+        return $imageRepository->getPeaceForCategory($request->get('start'), $request->get('count'), $request->get('id'));
     }
 }

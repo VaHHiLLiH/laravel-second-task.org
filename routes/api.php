@@ -22,6 +22,15 @@ Route::get('test', function () {
         'name' => 'Tom',
     ];
 });
+
 Route::post('/categories', [\App\Http\Controllers\TestController::class, 'showCategory']);
 
 Route::post('/categoryLimit', [\App\Http\Controllers\TestController::class, 'getCategoryLimit']);
+
+Route::post('/deleteCategory', [\App\Http\Controllers\TestController::class, 'deleteCategory']);
+
+Route::post('/findCategories', [\App\Http\Controllers\TestController::class, 'findCategories']);
+
+Route::post('/getCount', [\App\Http\Controllers\TestController::class, 'getCount']);
+
+Route::post('/getPeaceImages', [\App\Http\Controllers\TestController::class, 'getPeaceForCategory']);

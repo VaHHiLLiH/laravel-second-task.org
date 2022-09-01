@@ -17,4 +17,14 @@ class CategoryRepository
     {
         return DB::table('categories')->skip($start)->take($count)->get();
     }
+
+    public function findCategory($filter_name)
+    {
+        return DB::table('categories')->where('name', 'like', ucfirst($filter_name).'%')->get();
+    }
+
+    /*public function getCount($category_id)
+    {
+        return count(DB::table('images')->where('category_id'));
+    }*/
 }

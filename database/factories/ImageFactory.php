@@ -16,7 +16,7 @@ class ImageFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'image_path' => $this->faker->imageUrl,
+            'image_path' => $this->faker->imageUrl(200, 150),
             'status' => 0,
             'category_id' => 0,
         ];
