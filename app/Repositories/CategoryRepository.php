@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
-
+// Указать везде тайпхинты
 class CategoryRepository
 {
     public function getAll()
@@ -13,12 +13,12 @@ class CategoryRepository
         return Category::all();
     }
 
-    public function getPeace($start, $count)
+    public function getPeace(int $start, int $count)
     {
         return DB::table('categories')->skip($start)->take($count)->get();
     }
 
-    public function findCategory($filter_name)
+    public function findCategory(string $filter_name)
     {
         return DB::table('categories')->where('name', 'like', ucfirst($filter_name).'%')->get();
     }

@@ -1,7 +1,6 @@
 <template>
     <div class="heading-panel">
         <div class="logo">
-            <!--<img src="https://via.placeholder.com/640x480.png/000066?text=aut" alt="logo">-->
             <img src="https://via.placeholder.com/480x300.png/00cc22?text=Autist" alt="logo">
         </div>
         <a class="menu-item" href="#">Главная</a>

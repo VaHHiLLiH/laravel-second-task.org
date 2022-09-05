@@ -46,6 +46,10 @@ class TestController extends Controller
 
     public function deleteCategory(Request $request)
     {
+        /*
+         Category::destroy($id);
+         */
+
         $category = Category::find($request->get('category_id'));
 
         $category->delete();
@@ -58,6 +62,10 @@ class TestController extends Controller
 
     public function getCount(Request $request, CategoryRepository $categoryRepository)
     {
+        /*
+         Category::whereId($id)->count()
+         */
+
         $category = Category::find($request->get('category_id'));
 
         return count($category->images);
